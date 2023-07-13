@@ -1,9 +1,11 @@
 import Star from "./Star"
+import { StarsCount } from "../ts/Stars";
+import * as React from 'react'
 
-export default function Stars({ count }) {
+export default function Stars({ count } : StarsCount) {
 
   const getStars = () => {
-    let content = [];
+    let content : React.ReactElement[] = [];
 
     for (let i = 0; i < count; i++) {
         content.push(
@@ -19,7 +21,7 @@ export default function Stars({ count }) {
     <>
         { (typeof count === 'number') && (count >= 1 && count <= 5) ? (
             <ul>
-                {getStars(count)}
+                {getStars()}
             </ul>
         ): (undefined) }
     </>
